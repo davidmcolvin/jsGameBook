@@ -25,3 +25,17 @@ function draw_grid(ctx, minor, major, stroke, fill) {
  }
  ctx.restore();
 }  
+
+function draw_pacman(ctx, x, y, r, o, stroke, fill ) {
+    stroke = stroke || "#00FF00";
+    fill = fill || "#009900";
+    ctx.save()
+    ctx.strokeStyle = stroke;
+    ctx.fillStyle = fill;
+    context.beginPath();
+    context.arc(x, y, r, (0.2 - (0.2 * o)) * Math.PI, (1.8 + (.2 * o)) * Math.PI);
+    context.lineTo(x, y);
+    context.closePath();
+    context.fill();
+    context.stroke();
+}
