@@ -7,42 +7,21 @@
     </head>
     <body>
         <h1>More drawing to canvas</h1>
-        <canvas id="asteroids" width="400" height="400"></canvas>
+        <canvas id="pacmania" width="400" height="400"></canvas>
         <script>
-var canvas = document.getElementById("asteroids");
+var canvas = document.getElementById("pacmania");
  var context = canvas.getContext("2d");
  draw_grid(context)
- context.beginPath();
- context.strokeStyle = "#FFFFFF";
- context.fillStyle = "#00FF00";
- context.lineWidth = 2;
- context.moveTo(50, 50);
- context.bezierCurveTo(0, 0, 250, 250, 150, 250);
- context.bezierCurveTo(250, 250, 250, 250, 250, 170);
- context.bezierCurveTo(250, 50, 400, 350, 320, 280);
- context.closePath();
- // context.fill();
- context.stroke();
- context.fillText("(50, 50)", 30, 40);
- context.fillText("(150, 250)", 130, 260);
- context.fillText("(250, 170)", 255, 175);
- context.beginPath()
- context.moveTo(50, 250);
- context.quadraticCurveTo(25, 300, 50, 350);
- context.quadraticCurveTo(100, 375, 150, 350);
- context.closePath();
- context.moveTo(230, 360);
- context.quadraticCurveTo(255, 340, 270, 360);
- context.quadraticCurveTo(255, 340, 270, 310);
- context.closePath();
- context.moveTo(250, 50);
- context.quadraticCurveTo(310, 160, 370, 50);
- context.quadraticCurveTo(400, 75, 370, 100);
- context.closePath();
- context.strokeStyle = "#FFFF00";
- context.fillStyle = "#000000";
- context.fill();
- context.stroke();
+ var min_radius = 5;
+var max_radius = 50;
+do {
+ let x = context.canvas.width * Math.random();
+ let y = context.canvas.height * Math.random();
+ let radius = min_radius + (max_radius - min_radius) * Math.random();
+ draw_pacman(context, x, y, radius, Math.random(), 'yellow', 'black');
+}
+while(Math.random() < 0.97);
+
         </script>
     </body>
 </html>
