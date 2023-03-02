@@ -1,27 +1,18 @@
 <!doctype html>
 <html>
     <head>
-        <title>More drawing to canvas</title>
+        <title>Drawing a spaceship</title>
         <link rel="stylesheet" href="styles.css">
         <script src="drawing.js"></script>
     </head>
     <body>
-        <h1>More drawing to canvas</h1>
-        <canvas id="pacmania" width="400" height="400"></canvas>
+        <h1>Drawing a spaceship</h1>
+        <canvas id="asteroids" width="400" height="400"></canvas>
         <script>
-var canvas = document.getElementById("pacmania");
- var context = canvas.getContext("2d");
- draw_grid(context)
- var min_radius = 5;
-var max_radius = 50;
-do {
- let x = context.canvas.width * Math.random();
- let y = context.canvas.height * Math.random();
- let radius = min_radius + (max_radius - min_radius) * Math.random();
- draw_pacman(context, x, y, radius, Math.random(), 'yellow', 'black');
-}
-while(Math.random() < 0.97);
-
+            var context = document.getElementById("asteroids").
+            getContext("2d");
+            draw_grid(context);
+            draw_ship(context, 200, 200, 150, {guide: true});
         </script>
     </body>
 </html>
