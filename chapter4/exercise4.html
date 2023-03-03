@@ -13,6 +13,10 @@
             getContext("2d");
             draw_grid(context);
             draw_ship(context, 200, 200, 150, {guide: true});
+            draw_ship(context, 75, 75, 50, {stroke: 'gold', fill: 'purple'});
+            draw_ship(context, 325, 325, 50, {angle: 0.8 * Math.PI, fill:'red', guide: true});
+            draw_ship(context, 75, 325, 50, {angle: 0.3 * Math.PI, fill:'grey', guide: true});
+            draw_ship(context, 325, 75, 50, {lineWidth: 8, fill: 'blue'});
         </script>
     </body>
 </html>
